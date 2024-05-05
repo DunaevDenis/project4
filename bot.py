@@ -20,7 +20,7 @@ def debug(message):
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    bot.send_message(message.chat.id,"приветствую я говоряший телеграмм бот пример моих возможностей в следуюшем собшении чтобы использовать мои возможности /tts если есть вопросы /help")
+    bot.send_message(message.chat.id,"Приветствую я говоряший телеграмм бот пример моих возможностей в следуюшем собшении чтобы использовать мои возможности /tts если есть вопросы /help")
     with open('tts.ogg', 'rb') as voice:
         bot.send_voice(message.chat.id, voice.read())
 
@@ -206,8 +206,6 @@ def handle_text(message):
         logging.error(e)  # если ошибка — записываем её в логи
         bot.send_message(message.from_user.id, "Не получилось ответить. Попробуй написать другое сообщение")
 
-
-...
 
 # обрабатываем все остальные типы сообщений
 @bot.message_handler(func=lambda: True)
